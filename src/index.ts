@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import contactRoutes from './routes/contact';
 import adminAuthRoutes from './routes/adminAuth';
+import blogRoutes from './routes/blog';
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ if (MONGO_URI) {
 
 app.use('/api/contact', contactRoutes);
 app.use('/api/admin', adminAuthRoutes);
+app.use('/api/blogs', blogRoutes);
 
 app.get('/', (req, res) => {
     res.send('Portfolio Backend API is running with MongoDB...');
